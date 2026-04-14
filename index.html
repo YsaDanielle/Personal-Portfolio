@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <script>
@@ -36,8 +36,8 @@
               dusk: "#140f1f"
             },
             fontFamily: {
-              sans: ["Manrope", "sans-serif"],
-              display: ["Instrument Serif", "serif"]
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Fraunces", "serif"]
             },
             boxShadow: {
               soft: "0 18px 60px rgba(111, 79, 163, 0.14)",
@@ -78,12 +78,32 @@
         --surface-deep: #3f2b62;
         --surface-glass: rgba(255, 255, 255, 0.68);
         --border-soft: rgba(146, 111, 196, 0.22);
+        --feature-panel: linear-gradient(135deg, #eee4ff 0%, #decdf8 48%, #ccb3f1 100%);
+        --feature-panel-text: #3f2b62;
+        --feature-panel-copy: rgba(63, 43, 98, 0.82);
+        --feature-panel-label: rgba(63, 43, 98, 0.58);
+        --contact-panel: linear-gradient(135deg, #eadcff 0%, #dac3fb 44%, #bb9cea 100%);
+        --contact-card: rgba(255, 255, 255, 0.26);
+        --contact-card-border: rgba(120, 87, 177, 0.18);
+        --contact-pill-border: rgba(120, 87, 177, 0.22);
+        --contact-pill-hover-bg: rgba(255, 255, 255, 0.72);
+        --contact-pill-hover-text: #3f2b62;
+        --modal-panel: linear-gradient(90deg, #f5eeff 0%, #f5eeff 18%, #ebe1fb 38%, #d6c2f3 58%, #b18de1 78%, #805db8 100%);
+        --modal-panel-soft: rgba(255, 255, 255, 0.12);
+        --modal-panel-text: #3f2b62;
+        --modal-panel-text-soft: rgba(63, 43, 98, 0.8);
+        --modal-panel-label: rgba(63, 43, 98, 0.58);
+        --modal-panel-button-bg: rgba(255, 255, 255, 0.22);
+        --modal-panel-button-border: rgba(255, 255, 255, 0.34);
         --button-primary: linear-gradient(135deg, #8e6ad0 0%, #6f4fa3 55%, #5d4191 100%);
         --button-primary-hover: linear-gradient(135deg, #9c79dc 0%, #7b58b3 55%, #69489f 100%);
         --button-primary-text: #ffffff;
         --button-ghost: rgba(255, 255, 255, 0.78);
         --button-ghost-hover: #f2e9ff;
         --button-ghost-text: #3c2a59;
+        --social-orb-bg: #3f2b62;
+        --social-orb-text: #ffffff;
+        --social-orb-hover: #6f4fa3;
       }
 
       html.dark {
@@ -97,12 +117,32 @@
         --surface-deep: #2a1c3b;
         --surface-glass: rgba(33, 23, 47, 0.78);
         --border-soft: rgba(255, 255, 255, 0.1);
+        --feature-panel: linear-gradient(135deg, #38204f 0%, #4c2e73 52%, #5c3891 100%);
+        --feature-panel-text: #ffffff;
+        --feature-panel-copy: rgba(255, 255, 255, 0.82);
+        --feature-panel-label: rgba(255, 255, 255, 0.58);
+        --contact-panel: linear-gradient(135deg, #1c122b 0%, #29163f 48%, #3b1f5d 100%);
+        --contact-card: rgba(255, 255, 255, 0.05);
+        --contact-card-border: rgba(255, 255, 255, 0.1);
+        --contact-pill-border: rgba(255, 255, 255, 0.1);
+        --contact-pill-hover-bg: #f3eaff;
+        --contact-pill-hover-text: #2b1b3f;
+        --modal-panel: linear-gradient(90deg, #241833 0%, #2d1c42 35%, #3d265c 68%, #563784 100%);
+        --modal-panel-soft: rgba(255, 255, 255, 0.08);
+        --modal-panel-text: #ffffff;
+        --modal-panel-text-soft: rgba(255, 255, 255, 0.8);
+        --modal-panel-label: rgba(255, 255, 255, 0.55);
+        --modal-panel-button-bg: rgba(255, 255, 255, 0.1);
+        --modal-panel-button-border: rgba(255, 255, 255, 0.2);
         --button-primary: linear-gradient(135deg, #f8f0ff 0%, #ecdfff 55%, #e0ccff 100%);
         --button-primary-hover: linear-gradient(135deg, #ffffff 0%, #f1e5ff 55%, #e7d7ff 100%);
         --button-primary-text: #241733;
         --button-ghost: rgba(255, 255, 255, 0.06);
         --button-ghost-hover: rgba(255, 255, 255, 0.12);
         --button-ghost-text: #f5edff;
+        --social-orb-bg: #f3eaff;
+        --social-orb-text: #241733;
+        --social-orb-hover: #ffffff;
       }
 
       html {
@@ -170,6 +210,76 @@
         border-color: var(--border-soft) !important;
       }
 
+      .surface-feature-panel {
+        background: var(--feature-panel) !important;
+        color: var(--feature-panel-text) !important;
+      }
+
+      .feature-panel-label {
+        color: var(--feature-panel-label) !important;
+      }
+
+      .feature-panel-copy {
+        color: var(--feature-panel-copy) !important;
+      }
+
+      .surface-contact-panel {
+        background: var(--contact-panel) !important;
+        color: var(--feature-panel-text) !important;
+      }
+
+      .surface-contact-card {
+        background: var(--contact-card) !important;
+        border-color: var(--contact-card-border) !important;
+      }
+
+      .contact-pill {
+        border-color: var(--contact-pill-border) !important;
+      }
+
+      .contact-pill:hover {
+        background: var(--contact-pill-hover-bg) !important;
+        color: var(--contact-pill-hover-text) !important;
+      }
+
+      .social-orb {
+        background: var(--social-orb-bg) !important;
+        color: var(--social-orb-text) !important;
+        border-color: transparent !important;
+      }
+
+      .social-orb:hover {
+        background: var(--social-orb-hover) !important;
+      }
+
+      .surface-modal-panel {
+        background: var(--modal-panel) !important;
+        color: var(--modal-panel-text) !important;
+      }
+
+      .surface-modal-soft {
+        background: var(--modal-panel-soft) !important;
+        border-color: rgba(255, 255, 255, 0.14) !important;
+      }
+
+      .modal-panel-heading {
+        color: var(--modal-panel-text) !important;
+      }
+
+      .modal-panel-copy {
+        color: var(--modal-panel-text-soft) !important;
+      }
+
+      .modal-panel-label {
+        color: var(--modal-panel-label) !important;
+      }
+
+      .modal-panel-close {
+        background: var(--modal-panel-button-bg) !important;
+        border-color: var(--modal-panel-button-border) !important;
+        color: var(--modal-panel-text) !important;
+      }
+
       .btn-primary-theme {
         background: var(--button-primary) !important;
         color: var(--button-primary-text) !important;
@@ -189,6 +299,22 @@
 
       .btn-ghost-theme:hover {
         background: var(--button-ghost-hover) !important;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: translateX(18px) scale(1.02);
+        transition: opacity 0.75s ease, transform 0.75s ease;
+      }
+
+      .carousel-slide.is-active {
+        opacity: 1;
+        transform: translateX(0) scale(1);
       }
     </style>
   </head>

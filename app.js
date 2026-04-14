@@ -160,9 +160,9 @@ function App() {
           type="button"
           aria-label="Back to top"
           onClick=${() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="btn-primary-theme fixed bottom-6 right-6 z-40 rounded-full border px-4 py-3 text-sm font-semibold shadow-soft backdrop-blur transition hover:-translate-y-1"
+          className="btn-primary-theme fixed bottom-6 right-6 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full border text-sm font-semibold shadow-soft backdrop-blur transition hover:-translate-y-1"
         >
-          Top
+          <${ArrowUpIcon} />
         </button>
       `}
 
@@ -177,7 +177,7 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
     <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6">
       <nav className="surface-glass mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 rounded-[2rem] border px-4 py-3 shadow-soft backdrop-blur-xl sm:px-5">
         <a href="#top" className="text-primary text-lg font-extrabold tracking-[0.2em]">
-          ysadanielle.
+          YSCode
         </a>
 
         <div className="order-3 flex w-full items-center justify-center gap-1 overflow-x-auto pt-1 sm:order-2 sm:w-auto sm:justify-start sm:pt-0">
@@ -201,13 +201,190 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
         <button
           type="button"
           onClick=${onToggleTheme}
-          className="btn-ghost-theme order-2 rounded-full border px-3 py-2 text-sm font-semibold transition hover:-translate-y-0.5 sm:order-3"
+          aria-label=${darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          className="btn-ghost-theme order-2 inline-flex h-11 w-11 items-center justify-center rounded-full border text-sm font-semibold transition hover:-translate-y-0.5 sm:order-3"
         >
-          ${darkMode ? "Light" : "Dark"}
+          ${darkMode ? html`<${SunIcon} />` : html`<${MoonIcon} />`}
         </button>
       </nav>
     </header>
   `;
+}
+
+function SunIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8"></circle>
+      <path
+        d="M12 2.8V5.2M12 18.8v2.4M21.2 12h-2.4M5.2 12H2.8M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7M18.5 18.5l-1.7-1.7M7.2 7.2L5.5 5.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function MoonIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M19.2 14.8A7.8 7.8 0 1 1 9.2 4.8a6.6 6.6 0 0 0 10 10Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function ArrowUpIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M12 19V5M12 5l-5 5M12 5l5 5"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function ExternalLinkIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M14 5h5v5M10 14 19 5M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function FacebookIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M13.2 20v-7h2.5l.4-3h-2.9V8.2c0-.9.3-1.5 1.6-1.5H16V4.1c-.2 0-.9-.1-1.9-.1-2.6 0-4.1 1.5-4.1 4.3V10H7.5v3H10v7h3.2Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  `;
+}
+
+function InstagramIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.8"></rect>
+      <circle cx="12" cy="12" r="3.6" stroke="currentColor" strokeWidth="1.8"></circle>
+      <circle cx="17.2" cy="6.8" r="1" fill="currentColor"></circle>
+    </svg>
+  `;
+}
+
+function LinkedInIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M6.8 9.4V18M6.8 6.7a.95.95 0 1 0 0 1.9.95.95 0 0 0 0-1.9ZM11 18v-4.8c0-1.6 1.1-2.7 2.5-2.7 1.5 0 2.3 1 2.3 2.9V18"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function GitHubIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M9.2 18.8c-4 .9-4-2-5.6-2.4m11.2 4v-2.3c0-.7 0-1.2-.3-1.6 2.3-.3 4.7-1.1 4.7-5.2 0-1.2-.4-2.1-1.1-2.9.1-.3.5-1.4-.1-2.8 0 0-.9-.3-3 .9a10.4 10.4 0 0 0-5.4 0c-2.1-1.2-3-.9-3-.9-.6 1.4-.2 2.5-.1 2.8-.7.8-1.1 1.7-1.1 2.9 0 4.1 2.4 4.9 4.7 5.2-.3.4-.4 1-.4 1.6v2.3"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function MailIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M4 7.5 12 13l8-5.5M5.5 19h13A1.5 1.5 0 0 0 20 17.5v-11A1.5 1.5 0 0 0 18.5 5h-13A1.5 1.5 0 0 0 4 6.5v11A1.5 1.5 0 0 0 5.5 19Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function PhoneIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M6.9 5.8h2.6l1.3 3.2-1.6 1.4a14 14 0 0 0 4.6 4.6l1.4-1.6 3.2 1.3v2.6c0 .7-.6 1.3-1.3 1.3A13.4 13.4 0 0 1 5.6 7.1c0-.7.6-1.3 1.3-1.3Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function LocationIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M12 20s6-5.7 6-10.2A6 6 0 1 0 6 9.8C6 14.3 12 20 12 20Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <circle cx="12" cy="9.8" r="2.2" stroke="currentColor" strokeWidth="1.8"></circle>
+    </svg>
+  `;
+}
+
+function CopyIcon() {
+  return html`
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-4 w-4">
+      <path
+        d="M9 9.5h8.5a1.5 1.5 0 0 1 1.5 1.5v8.5a1.5 1.5 0 0 1-1.5 1.5H9A1.5 1.5 0 0 1 7.5 19.5V11A1.5 1.5 0 0 1 9 9.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M15 9V6.5A1.5 1.5 0 0 0 13.5 5H5.5A1.5 1.5 0 0 0 4 6.5v8A1.5 1.5 0 0 0 5.5 16H8"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  `;
+}
+
+function SocialIcon({ label }) {
+  if (label === "Facebook") return html`<${FacebookIcon} />`;
+  if (label === "Instagram") return html`<${InstagramIcon} />`;
+  if (label === "LinkedIn") return html`<${LinkedInIcon} />`;
+  if (label === "GitHub") return html`<${GitHubIcon} />`;
+  return label;
 }
 
 function Hero() {
@@ -216,7 +393,7 @@ function Hero() {
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div className="animate-fadeUp">
           <div className="surface-glass text-primary mb-5 inline-flex rounded-full border px-4 py-2 text-sm font-semibold shadow-sm backdrop-blur dark:text-[#eadcff]">
-            BSCS Student • Aspiring Developer • Creative Thinker
+            BSCS Student • Front-End Developer • Creative Thinker
           </div>
 
           <p className="text-muted mb-4 text-sm font-bold uppercase tracking-[0.28em] dark:text-white/55">
@@ -242,6 +419,17 @@ function Hero() {
             >
               Contact Me
             </a>
+            <a
+              href="./cv.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 border-b border-current pb-1 text-base font-bold text-primary transition hover:opacity-80 dark:text-white"
+            >
+              <span>View CV</span>
+              <span className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                <${ExternalLinkIcon} />
+              </span>
+            </a>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -259,11 +447,11 @@ function Hero() {
               alt="Ysa Danielle Atienza portrait"
               className="fade-mask h-[28rem] w-full rounded-[1.5rem] object-cover object-center"
             />
-            <div className="surface-deep mt-4 rounded-[1.5rem] p-4">
-              <p className="text-muted text-xs font-bold uppercase tracking-[0.25em] dark:text-white/45">
+            <div className="surface-feature-panel mt-4 rounded-[1.5rem] p-4">
+              <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">
                 Based in the Philippines
               </p>
-              <p className="mt-2 text-lg font-semibold text-white">
+              <p className="mt-2 text-lg font-semibold">
                 Interested in frontend development, UI polish, and expressive visual storytelling.
               </p>
             </div>
@@ -287,12 +475,12 @@ function AboutSection() {
   return html`
     <section id="about" className="px-6 py-12 sm:px-8">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="rounded-[2rem] bg-gradient-to-br from-[#7f5ab8] via-[#6f4fa3] to-[#5f4294] px-8 py-10 text-white shadow-card dark:from-[#38204f] dark:via-[#4c2e73] dark:to-[#5c3891]">
-          <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/60">About me</p>
+        <div className="surface-feature-panel rounded-[2rem] px-8 py-10 shadow-card">
+          <p className="feature-panel-label text-sm font-bold uppercase tracking-[0.3em]">About me</p>
           <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl">
             I enjoy making things that feel useful, gentle, and well put together.
           </h2>
-          <p className="mt-6 text-base leading-8 text-white/78">
+          <p className="feature-panel-copy mt-6 text-base leading-8">
             I’m a 21-year-old third-year Bachelor of Science in Computer Science student who enjoys coding, design, and creating experiences that feel warm and intentional. I love learning new tools, exploring better ways to build interfaces, and collaborating with people who care about thoughtful work.
           </p>
         </div>
@@ -369,7 +557,7 @@ function ProjectsSection({ onSelectProject }) {
                 key=${project.title}
                 className="surface-card group overflow-hidden rounded-[2rem] border shadow-card transition duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(111,79,163,0.18)]"
               >
-                <div className=${`h-48 bg-gradient-to-br ${project.accent} p-4`}>
+                <div className="relative h-48 overflow-hidden p-4">
                   <${ProjectPreviewCarousel} project=${project} />
                 </div>
                 <div className="p-6">
@@ -424,84 +612,176 @@ function ProjectPreviewCarousel({ project }) {
 
   return html`
     <div className="relative h-full w-full overflow-hidden rounded-[1.25rem] shadow-soft">
-      <img
-        src=${images[currentIndex]}
-        alt=${`${project.title} screenshot ${currentIndex + 1}`}
-        className="h-full w-full object-cover transition duration-500"
-      />
+      ${images.map(
+        (image, index) => html`
+          <img
+            key=${`${project.title}-preview-${index}`}
+            src=${image}
+            alt=${`${project.title} screenshot ${index + 1}`}
+            className=${`carousel-slide ${currentIndex === index ? "is-active" : ""}`}
+          />
+        `
+      )}
 
-      ${images.length > 1 &&
-      html`
-        <>
-          <button
-            type="button"
-            aria-label="Previous image"
-            onClick=${(event) => handleArrow(event, -1)}
-            className="btn-ghost-theme absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold shadow-sm"
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            aria-label="Next image"
-            onClick=${(event) => handleArrow(event, 1)}
-            className="btn-ghost-theme absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold shadow-sm"
-          >
-            →
-          </button>
-          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
-            ${images.map(
-              (_, index) => html`
-                <button
-                  key=${`${project.title}-dot-${index}`}
-                  type="button"
-                  aria-label=${`Go to image ${index + 1}`}
-                  onClick=${(event) => {
-                    event.stopPropagation();
-                    goTo(index);
-                  }}
-                  className=${`h-2.5 w-2.5 rounded-full transition ${
-                    currentIndex === index ? "bg-white" : "bg-white/45"
-                  }`}
-                />
-              `
-            )}
-          </div>
-        </>
-      `}
+      ${images.length > 1
+        ? [
+            html`
+              <button
+                key="prev"
+                type="button"
+                aria-label="Previous image"
+                onClick=${(event) => handleArrow(event, -1)}
+                className="btn-ghost-theme absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold shadow-sm"
+              >
+                ←
+              </button>
+            `,
+            html`
+              <button
+                key="next"
+                type="button"
+                aria-label="Next image"
+                onClick=${(event) => handleArrow(event, 1)}
+                className="btn-ghost-theme absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold shadow-sm"
+              >
+                →
+              </button>
+            `,
+            html`
+              <div key="dots" className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+                ${images.map(
+                  (_, index) => html`
+                    <button
+                      key=${`${project.title}-dot-${index}`}
+                      type="button"
+                      aria-label=${`Go to image ${index + 1}`}
+                      onClick=${(event) => {
+                        event.stopPropagation();
+                        goTo(index);
+                      }}
+                      className=${`h-2.5 w-2.5 rounded-full transition ${
+                        currentIndex === index ? "bg-white" : "bg-white/45"
+                      }`}
+                    />
+                  `
+                )}
+              </div>
+            `
+          ]
+        : null}
     </div>
   `;
 }
 
 function ContactSection() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const updateField = (field) => (event) => {
+    setForm((current) => ({ ...current, [field]: event.target.value }));
+  };
+
+  const resetForm = () => {
+    setForm({ name: "", email: "", message: "" });
+  };
+
+  const draftEmail = () => {
+    const subjectBase = form.name ? `Portfolio inquiry from ${form.name}` : "Portfolio inquiry";
+    const bodyLines = [
+      form.name ? `Name: ${form.name}` : "",
+      form.email ? `Email: ${form.email}` : "",
+      "",
+      form.message || "Hi Ysa, I'd love to connect with you."
+    ].filter(Boolean);
+
+    const mailto = `mailto:ysadani.atienza@gmail.com?subject=${encodeURIComponent(
+      subjectBase
+    )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+    window.location.href = mailto;
+  };
+
+  const copyText = async (value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (_error) {
+      // Ignore clipboard failures in restricted browsers.
+    }
+  };
+
   return html`
     <section id="contact" className="px-6 py-12 sm:px-8">
-      <div className="mx-auto grid max-w-6xl gap-6 rounded-[2.4rem] bg-gradient-to-br from-[#4a2f72] via-[#5a3c86] to-[#6c47a2] px-8 py-10 text-white shadow-soft dark:from-[#1c122b] dark:via-[#29163f] dark:to-[#3b1f5d] lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="surface-contact-panel mx-auto grid max-w-6xl gap-6 rounded-[2.4rem] px-6 py-6 shadow-soft lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-8">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.28em] text-white/45">Contact</p>
+          <p className="feature-panel-label text-sm font-bold uppercase tracking-[0.28em]">Contact</p>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl">
-            Let’s connect and build something meaningful.
+            Let’s talk about ideas, projects, or opportunities.
           </h2>
-          <p className="mt-5 max-w-xl text-base leading-8 text-white/72">
+          <p className="feature-panel-copy mt-5 max-w-xl text-base leading-8">
             I’m always open to learning opportunities, creative collaborations, and conversations about design, development, and student projects.
           </p>
-        </div>
 
-        <div className="grid gap-4">
-          <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/45">Email</p>
-            <a className="mt-2 block text-lg font-semibold hover:text-[#f1dfff]" href="mailto:ysadani.atienza@gmail.com">
-              ysadani.atienza@gmail.com
-            </a>
+          <div className="mt-8 grid gap-4">
+            <div className="surface-contact-card flex items-center justify-between gap-4 rounded-[1.6rem] border p-5">
+              <div className="flex min-w-0 items-center gap-4">
+                <div className="social-orb inline-flex h-11 w-11 items-center justify-center rounded-full border">
+                  <${MailIcon} />
+                </div>
+                <div className="min-w-0">
+                  <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">Email</p>
+                  <a className="mt-1 block truncate text-lg font-semibold hover:text-[#f1dfff]" href="mailto:ysadani.atienza@gmail.com">
+                    ysadani.atienza@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick=${() => copyText("ysadani.atienza@gmail.com")}
+                className="contact-copy inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]"
+              >
+                <${CopyIcon} />
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <div className="surface-contact-card flex items-center justify-between gap-4 rounded-[1.6rem] border p-5">
+              <div className="flex min-w-0 items-center gap-4">
+                <div className="social-orb inline-flex h-11 w-11 items-center justify-center rounded-full border">
+                  <${PhoneIcon} />
+                </div>
+                <div className="min-w-0">
+                  <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">Phone</p>
+                  <a className="mt-1 block truncate text-lg font-semibold hover:text-[#f1dfff]" href="tel:+639771050524">
+                    +63 977 105 0524
+                  </a>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick=${() => copyText("+63 977 105 0524")}
+                className="contact-copy inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]"
+              >
+                <${CopyIcon} />
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <div className="surface-contact-card flex items-center gap-4 rounded-[1.6rem] border p-5">
+              <div className="social-orb inline-flex h-11 w-11 items-center justify-center rounded-full border">
+                <${LocationIcon} />
+              </div>
+              <div>
+                <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">Location</p>
+                <p className="mt-1 text-lg font-semibold">Based in the Philippines</p>
+              </div>
+            </div>
           </div>
-          <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/45">Phone</p>
-            <a className="mt-2 block text-lg font-semibold hover:text-[#f1dfff]" href="tel:+639771050524">
-              +63 977 105 0524
-            </a>
-          </div>
-          <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/45">Socials</p>
+
+          <div className="mt-8">
+            <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">Connect With Me</p>
             <div className="mt-4 flex flex-wrap gap-3">
               ${socialLinks.map(
                 (link) => html`
@@ -510,13 +790,73 @@ function ContactSection() {
                     href=${link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white/80 transition hover:bg-[#f3eaff] hover:text-[#2b1b3f]"
+                    aria-label=${link.label}
+                    title=${link.label}
+                    className="social-orb inline-flex h-12 w-12 items-center justify-center rounded-full border text-sm font-semibold transition hover:-translate-y-0.5"
                   >
-                    ${link.label}
+                    <${SocialIcon} label=${link.label} />
                   </a>
                 `
               )}
             </div>
+          </div>
+        </div>
+
+        <div className="surface-contact-form rounded-[2rem] border p-6">
+          <p className="feature-panel-label text-sm font-bold uppercase tracking-[0.28em]">Quick Message</p>
+          <h3 className="mt-3 font-display text-3xl sm:text-4xl">Draft a clean intro email</h3>
+
+          <div className="mt-6 grid gap-5">
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold">Name</span>
+              <input
+                type="text"
+                value=${form.name}
+                onInput=${updateField("name")}
+                placeholder="Your name"
+                className="contact-input w-full rounded-[1.25rem] border px-5 py-4 outline-none transition focus:ring-2 focus:ring-plum/30"
+              />
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold">Email</span>
+              <input
+                type="email"
+                value=${form.email}
+                onInput=${updateField("email")}
+                placeholder="your@email.com"
+                className="contact-input w-full rounded-[1.25rem] border px-5 py-4 outline-none transition focus:ring-2 focus:ring-plum/30"
+              />
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold">Message</span>
+              <textarea
+                value=${form.message}
+                onInput=${updateField("message")}
+                placeholder="Tell me a bit about what you'd like to discuss."
+                rows="6"
+                className="contact-input w-full rounded-[1.5rem] border px-5 py-4 outline-none transition focus:ring-2 focus:ring-plum/30"
+              ></textarea>
+            </label>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick=${draftEmail}
+              className="btn-primary-theme inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-bold transition hover:-translate-y-1"
+            >
+              <span>Draft Email Message</span>
+              <span>→</span>
+            </button>
+            <button
+              type="button"
+              onClick=${resetForm}
+              className="btn-ghost-theme rounded-full border px-6 py-3 text-sm font-bold transition hover:-translate-y-1"
+            >
+              Clear Form
+            </button>
           </div>
         </div>
       </div>
@@ -568,67 +908,77 @@ function ProjectModal({ project, onClose }) {
                 className="h-full max-h-[28rem] w-full rounded-[1.5rem] object-cover"
               />
 
-              ${images.length > 1 &&
-              html`
-                <>
-                  <button
-                    type="button"
-                    aria-label="Previous image"
-                    onClick=${() => moveImage(-1)}
-                    className="btn-ghost-theme absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold"
-                  >
-                    ←
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="Next image"
-                    onClick=${() => moveImage(1)}
-                    className="btn-ghost-theme absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold"
-                  >
-                    →
-                  </button>
-                  <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-black/15 px-3 py-2 backdrop-blur">
-                    ${images.map(
-                      (_, index) => html`
-                        <button
-                          key=${`${project.title}-modal-dot-${index}`}
-                          type="button"
-                          aria-label=${`Show image ${index + 1}`}
-                          onClick=${() => setCurrentIndex(index)}
-                          className=${`h-2.5 w-2.5 rounded-full transition ${
-                            currentIndex === index ? "bg-white" : "bg-white/45"
-                          }`}
-                        />
-                      `
-                    )}
-                  </div>
-                </>
-              `}
+              ${images.length > 1
+                ? [
+                    html`
+                      <button
+                        key="modal-prev"
+                        type="button"
+                        aria-label="Previous image"
+                        onClick=${() => moveImage(-1)}
+                        className="btn-ghost-theme absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold"
+                      >
+                        ←
+                      </button>
+                    `,
+                    html`
+                      <button
+                        key="modal-next"
+                        type="button"
+                        aria-label="Next image"
+                        onClick=${() => moveImage(1)}
+                        className="btn-ghost-theme absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold"
+                      >
+                        →
+                      </button>
+                    `,
+                    html`
+                      <div
+                        key="modal-dots"
+                        className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-black/15 px-3 py-2 backdrop-blur"
+                      >
+                        ${images.map(
+                          (_, index) => html`
+                            <button
+                              key=${`${project.title}-modal-dot-${index}`}
+                              type="button"
+                              aria-label=${`Show image ${index + 1}`}
+                              onClick=${() => setCurrentIndex(index)}
+                              className=${`h-2.5 w-2.5 rounded-full transition ${
+                                currentIndex === index ? "bg-white" : "bg-white/45"
+                              }`}
+                            />
+                          `
+                        )}
+                      </div>
+                    `
+                  ]
+                : null}
             </div>
           </div>
-          <div className="flex flex-col p-6 sm:p-8">
+          <div className="surface-modal-panel flex flex-col p-6 sm:p-8">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-muted text-xs font-bold uppercase tracking-[0.25em] dark:text-white/45">
+                <p className="modal-panel-label text-xs font-bold uppercase tracking-[0.25em]">
                   ${project.category}
                 </p>
-                <h3 className="text-primary mt-3 font-display text-4xl dark:text-white">
+                <h3 className="modal-panel-heading mt-3 font-display text-4xl">
                   ${project.title}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick=${onClose}
-                className="rounded-full border border-black/10 px-3 py-2 text-sm font-bold dark:border-white/10"
+                className="modal-panel-close rounded-full border px-3 py-2 text-sm font-bold"
               >
                 Close
               </button>
             </div>
-            <p className="text-secondary mt-6 text-base leading-8 dark:text-white/70">
+            <p className="modal-panel-copy mt-6 text-base leading-8">
               ${project.description}
             </p>
-            <div className="surface-soft mt-6 rounded-[1.4rem] border p-5">
-              <p className="text-secondary text-sm leading-7 dark:text-white/68">
+            <div className="surface-modal-soft mt-6 rounded-[1.4rem] border p-5">
+              <p className="modal-panel-copy text-sm leading-7">
                 This piece represents part of my growth as a student creator, combining curiosity, collaboration, and a desire to make experiences easier and more enjoyable for people.
               </p>
             </div>
