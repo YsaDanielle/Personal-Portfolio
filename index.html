@@ -15,31 +15,37 @@
       rel="stylesheet"
     />
     <script>
+      if (localStorage.getItem("ysa-theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script>
       tailwind = window.tailwind || {};
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              sand: "#f5efe6",
-              ink: "#1e1d1a",
-              clay: "#e7d7c7",
-              rosewood: "#8b5e7a",
-              plum: "#4e3b52",
-              pine: "#24352e",
-              mist: "#f8f5f1"
+              lilac: "#f6f1ff",
+              ink: "#2b2238",
+              lavender: "#eadfff",
+              orchid: "#a176d8",
+              plum: "#6f4fa3",
+              deep: "#241733",
+              mist: "#fbf8ff",
+              dusk: "#140f1f"
             },
             fontFamily: {
               sans: ["Manrope", "sans-serif"],
               display: ["Instrument Serif", "serif"]
             },
             boxShadow: {
-              soft: "0 18px 60px rgba(30, 29, 26, 0.12)",
-              card: "0 12px 40px rgba(36, 53, 46, 0.12)"
+              soft: "0 18px 60px rgba(111, 79, 163, 0.14)",
+              card: "0 12px 40px rgba(111, 79, 163, 0.12)"
             },
             backgroundImage: {
               grain:
-                "radial-gradient(circle at top left, rgba(255,255,255,0.85), transparent 35%), radial-gradient(circle at 80% 10%, rgba(139,94,122,0.18), transparent 25%), radial-gradient(circle at 50% 100%, rgba(36,53,46,0.18), transparent 30%)"
+                "radial-gradient(circle at top left, rgba(255,255,255,0.92), transparent 34%), radial-gradient(circle at 85% 10%, rgba(161,118,216,0.2), transparent 24%), radial-gradient(circle at 50% 100%, rgba(111,79,163,0.16), transparent 30%)"
             },
             keyframes: {
               float: {
@@ -61,24 +67,135 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      :root {
+        --text-primary: #3c2a59;
+        --text-secondary: #5d4b79;
+        --text-muted: #7c6a97;
+        --text-inverse: #f7f1ff;
+        --surface: rgba(255, 255, 255, 0.74);
+        --surface-strong: #f5eeff;
+        --surface-soft: #fbf7ff;
+        --surface-deep: #3f2b62;
+        --surface-glass: rgba(255, 255, 255, 0.68);
+        --border-soft: rgba(146, 111, 196, 0.22);
+        --button-primary: linear-gradient(135deg, #8e6ad0 0%, #6f4fa3 55%, #5d4191 100%);
+        --button-primary-hover: linear-gradient(135deg, #9c79dc 0%, #7b58b3 55%, #69489f 100%);
+        --button-primary-text: #ffffff;
+        --button-ghost: rgba(255, 255, 255, 0.78);
+        --button-ghost-hover: #f2e9ff;
+        --button-ghost-text: #3c2a59;
+      }
+
+      html.dark {
+        --text-primary: #f5edff;
+        --text-secondary: #dccccf;
+        --text-muted: #b9a8d0;
+        --text-inverse: #140f1f;
+        --surface: rgba(255, 255, 255, 0.06);
+        --surface-strong: #241833;
+        --surface-soft: rgba(255, 255, 255, 0.05);
+        --surface-deep: #2a1c3b;
+        --surface-glass: rgba(33, 23, 47, 0.78);
+        --border-soft: rgba(255, 255, 255, 0.1);
+        --button-primary: linear-gradient(135deg, #f8f0ff 0%, #ecdfff 55%, #e0ccff 100%);
+        --button-primary-hover: linear-gradient(135deg, #ffffff 0%, #f1e5ff 55%, #e7d7ff 100%);
+        --button-primary-text: #241733;
+        --button-ghost: rgba(255, 255, 255, 0.06);
+        --button-ghost-hover: rgba(255, 255, 255, 0.12);
+        --button-ghost-text: #f5edff;
+      }
+
       html {
         scroll-behavior: smooth;
       }
 
       body {
-        background-color: #f8f5f1;
+        background:
+          linear-gradient(180deg, #fcfaff 0%, #f7f2ff 45%, #f4efff 100%);
+        color: #2b2238;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      html.dark body {
+        background:
+          radial-gradient(circle at top center, rgba(123, 85, 191, 0.2), transparent 30%),
+          linear-gradient(180deg, #120d1c 0%, #171122 50%, #1b1329 100%);
+        color: #f5edff;
       }
 
       ::selection {
-        background: rgba(139, 94, 122, 0.22);
+        background: rgba(161, 118, 216, 0.28);
       }
 
       .fade-mask {
         mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
       }
+
+      .text-primary {
+        color: var(--text-primary) !important;
+      }
+
+      .text-secondary {
+        color: var(--text-secondary) !important;
+      }
+
+      .text-muted {
+        color: var(--text-muted) !important;
+      }
+
+      .text-inverse {
+        color: var(--text-inverse) !important;
+      }
+
+      .surface-card {
+        background: var(--surface) !important;
+        border-color: var(--border-soft) !important;
+      }
+
+      .surface-soft {
+        background: var(--surface-soft) !important;
+        border-color: var(--border-soft) !important;
+      }
+
+      .surface-strong {
+        background: var(--surface-strong) !important;
+      }
+
+      .surface-deep {
+        background: var(--surface-deep) !important;
+      }
+
+      .surface-glass {
+        background: var(--surface-glass) !important;
+        border-color: var(--border-soft) !important;
+      }
+
+      .btn-primary-theme {
+        background: var(--button-primary) !important;
+        color: var(--button-primary-text) !important;
+        border-color: transparent !important;
+        box-shadow: 0 12px 28px rgba(111, 79, 163, 0.22);
+      }
+
+      .btn-primary-theme:hover {
+        background: var(--button-primary-hover) !important;
+      }
+
+      .btn-ghost-theme {
+        background: var(--button-ghost) !important;
+        color: var(--button-ghost-text) !important;
+        border-color: var(--border-soft) !important;
+      }
+
+      .btn-ghost-theme:hover {
+        background: var(--button-ghost-hover) !important;
+      }
     </style>
   </head>
   <body class="bg-mist text-ink antialiased">
+    <div
+      class="hidden text-plum text-ink bg-mist dark:bg-dusk bg-lilac border-orchid/20 border-orchid/30 border-plum/15 border-plum/10 bg-white/80 bg-white/72 bg-white/70 bg-white/65 bg-white/45 bg-white/5 dark:text-white dark:text-[#f7f1ff] dark:text-[#f2e8ff] dark:text-[#eadcff] dark:bg-[#241833]/90 dark:bg-[#21172f]/78 dark:bg-[#2a1c3b] dark:bg-[#241833] dark:bg-[#1d132a] dark:bg-[#261838] dark:from-[#38204f] dark:via-[#4c2e73] dark:to-[#5c3891] dark:from-[#1c122b] dark:via-[#29163f] dark:to-[#3b1f5d] dark:from-[#6d48aa]/40 dark:to-[#43245f]/35 from-[#7f5ab8] via-[#6f4fa3] to-[#5f4294] from-[#2f1d46] via-[#40285f] to-[#55357d] from-[#c9b0f1]/60 via-[#f4ebff] from-[#9f86d8]/50 via-[#efe8ff] from-[#dfc7ff]/70 via-[#f7f2ff] from-[#bba1f0]/60 via-[#efe7ff] from-[#d8c1ff]/70 via-[#f6f0ff] bg-[#f7f2ff] bg-[#f4edff] bg-[#f2eaff] bg-[#f3eaff] bg-[#ccb7f3]/70 bg-[#e3d6ff]/90 bg-[#cdb6f6]/55 dark:bg-[#7b55bf]/30 dark:bg-[#4d2f78]/35 hover:bg-[#5f4294] hover:bg-[#f4edff] hover:text-[#2b1b3f] hover:text-[#f1dfff]">
+    </div>
     <div id="root"></div>
     <script type="module" src="./app.js"></script>
   </body>
