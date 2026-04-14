@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ysa Danielle Atienza | Portfolio</title>
+    <meta
+      name="description"
+      content="A modern portfolio for Ysa Danielle Atienza, a BSCS student focused on design, development, and thoughtful digital experiences."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind = window.tailwind || {};
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              sand: "#f5efe6",
+              ink: "#1e1d1a",
+              clay: "#e7d7c7",
+              rosewood: "#8b5e7a",
+              plum: "#4e3b52",
+              pine: "#24352e",
+              mist: "#f8f5f1"
+            },
+            fontFamily: {
+              sans: ["Manrope", "sans-serif"],
+              display: ["Instrument Serif", "serif"]
+            },
+            boxShadow: {
+              soft: "0 18px 60px rgba(30, 29, 26, 0.12)",
+              card: "0 12px 40px rgba(36, 53, 46, 0.12)"
+            },
+            backgroundImage: {
+              grain:
+                "radial-gradient(circle at top left, rgba(255,255,255,0.85), transparent 35%), radial-gradient(circle at 80% 10%, rgba(139,94,122,0.18), transparent 25%), radial-gradient(circle at 50% 100%, rgba(36,53,46,0.18), transparent 30%)"
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" }
+              },
+              fadeUp: {
+                "0%": { opacity: "0", transform: "translateY(24px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" }
+              }
+            },
+            animation: {
+              float: "float 7s ease-in-out infinite",
+              fadeUp: "fadeUp 0.8s ease forwards"
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #f8f5f1;
+      }
+
+      ::selection {
+        background: rgba(139, 94, 122, 0.22);
+      }
+
+      .fade-mask {
+        mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-mist text-ink antialiased">
+    <div id="root"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+  </html>
