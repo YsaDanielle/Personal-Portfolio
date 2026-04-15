@@ -424,7 +424,7 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-3 border-b border-current pb-1 text-base font-bold text-primary transition hover:opacity-80 dark:text-white"
-            >
+            > 
               <span>View CV</span>
               <span className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                 <${ExternalLinkIcon} />
