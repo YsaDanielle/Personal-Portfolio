@@ -151,7 +151,7 @@ function App() {
       </main>
 
       <footer className="text-muted px-6 pb-10 pt-4 text-center text-sm">
-        Crafted with React and Tailwind. © ${yearLabel} Ysa Danielle Atienza.
+        Designed & Built with React and Tailwind. © ${yearLabel} Ysa Danielle Atienza. All rights reserved.
       </footer>
 
       ${showTopButton &&
