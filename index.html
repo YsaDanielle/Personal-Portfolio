@@ -93,7 +93,7 @@
         --contact-pill-border: rgba(120, 87, 177, 0.22);
         --contact-pill-hover-bg: rgba(255, 255, 255, 0.72);
         --contact-pill-hover-text: #3f2b62;
-        --modal-panel: linear-gradient(90deg, #f5eeff 0%, #f5eeff 18%, #ebe1fb 38%, #d6c2f3 58%, #b18de1 78%, #805db8 100%);
+        --modal-panel: linear-gradient(180deg, #f5eeff 0%, #f5eeff 18%, #ebe1fb 38%, #d6c2f3 58%, #b18de1 78%, #805db8 100%);
         --modal-panel-soft: rgba(255, 255, 255, 0.12);
         --modal-panel-text: #3f2b62;
         --modal-panel-text-soft: rgba(63, 43, 98, 0.8);
@@ -132,7 +132,7 @@
         --contact-pill-border: rgba(255, 255, 255, 0.1);
         --contact-pill-hover-bg: #f3eaff;
         --contact-pill-hover-text: #2b1b3f;
-        --modal-panel: linear-gradient(90deg, #241833 0%, #2d1c42 35%, #3d265c 68%, #563784 100%);
+        --modal-panel: linear-gradient(180deg, #241833 0%, #2d1c42 35%, #3d265c 68%, #563784 100%);
         --modal-panel-soft: rgba(255, 255, 255, 0.08);
         --modal-panel-text: #ffffff;
         --modal-panel-text-soft: rgba(255, 255, 255, 0.8);
@@ -321,6 +321,10 @@
         opacity: 1;
         transform: translateX(0) scale(1);
       }
+
+      .modal-scroll {
+        -webkit-overflow-scrolling: touch;
+      }
     </style>
   </head>
   <body class="bg-mist text-ink antialiased">
@@ -328,6 +332,6 @@
       class="hidden text-plum text-ink bg-mist dark:bg-dusk bg-lilac border-orchid/20 border-orchid/30 border-plum/15 border-plum/10 bg-white/80 bg-white/72 bg-white/70 bg-white/65 bg-white/45 bg-white/5 dark:text-white dark:text-[#f7f1ff] dark:text-[#f2e8ff] dark:text-[#eadcff] dark:bg-[#241833]/90 dark:bg-[#21172f]/78 dark:bg-[#2a1c3b] dark:bg-[#241833] dark:bg-[#1d132a] dark:bg-[#261838] dark:from-[#38204f] dark:via-[#4c2e73] dark:to-[#5c3891] dark:from-[#1c122b] dark:via-[#29163f] dark:to-[#3b1f5d] dark:from-[#6d48aa]/40 dark:to-[#43245f]/35 from-[#7f5ab8] via-[#6f4fa3] to-[#5f4294] from-[#2f1d46] via-[#40285f] to-[#55357d] from-[#c9b0f1]/60 via-[#f4ebff] from-[#9f86d8]/50 via-[#efe8ff] from-[#dfc7ff]/70 via-[#f7f2ff] from-[#bba1f0]/60 via-[#efe7ff] from-[#d8c1ff]/70 via-[#f6f0ff] bg-[#f7f2ff] bg-[#f4edff] bg-[#f2eaff] bg-[#f3eaff] bg-[#ccb7f3]/70 bg-[#e3d6ff]/90 bg-[#cdb6f6]/55 dark:bg-[#7b55bf]/30 dark:bg-[#4d2f78]/35 hover:bg-[#5f4294] hover:bg-[#f4edff] hover:text-[#2b1b3f] hover:text-[#f1dfff]">
     </div>
     <div id="root"></div>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./app.js?v=20260415c"></script>
   </body>
   </html>

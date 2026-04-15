@@ -17,7 +17,7 @@ const skillGroups = [
   },
   {
     title: "Growing In",
-    items: ["Python", "Next.js", "Sass", "Node.js"]
+    items: ["Python", "Next.js", "Sass", "MongoDB", "Node.js"]
   },
   {
     title: "Creative Strengths",
@@ -904,24 +904,24 @@ function ProjectModal({ project, onClose }) {
 
   return html`
     <div
-      className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/55 p-3 backdrop-blur-sm sm:items-center sm:p-4"
+      className="modal-scroll fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto overscroll-contain bg-black/55 p-3 backdrop-blur-sm sm:items-center sm:p-4"
       onClick=${onClose}
       role="presentation"
     >
       <div
-        className="surface-card my-6 w-full max-w-4xl overflow-hidden rounded-[2rem] border shadow-soft dark:bg-[#1d132a] sm:my-8"
+        className="surface-card modal-scroll my-4 max-h-[calc(100dvh-2rem)] w-full max-w-4xl overflow-y-auto overscroll-contain rounded-[2rem] border shadow-soft dark:bg-[#1d132a] sm:my-8 sm:max-h-[calc(100dvh-4rem)]"
         onClick=${(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-label=${project.title}
       >
-        <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
-          <div className="surface-strong p-4 dark:bg-[#261838]">
+        <div className="flex flex-col">
+          <div className="surface-strong p-4 sm:p-5 dark:bg-[#261838]">
             <div className="relative overflow-hidden rounded-[1.5rem]">
               <img
                 src=${images[currentIndex]}
                 alt=${`${project.title} preview ${currentIndex + 1}`}
-                className="h-full max-h-[18rem] w-full rounded-[1.5rem] object-cover sm:max-h-[22rem] lg:max-h-[28rem]"
+                className="h-full max-h-[16rem] w-full rounded-[1.5rem] object-cover sm:max-h-[24rem] lg:max-h-[32rem]"
               />
 
               ${images.length > 1
@@ -932,7 +932,7 @@ function ProjectModal({ project, onClose }) {
                         type="button"
                         aria-label="Previous image"
                         onClick=${() => moveImage(-1)}
-                        className="btn-ghost-theme absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold"
+                        className="btn-ghost-theme absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold sm:left-4"
                       >
                         ←
                       </button>
@@ -943,7 +943,7 @@ function ProjectModal({ project, onClose }) {
                         type="button"
                         aria-label="Next image"
                         onClick=${() => moveImage(1)}
-                        className="btn-ghost-theme absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold"
+                        className="btn-ghost-theme absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border px-3 py-2 text-sm font-bold sm:right-4"
                       >
                         →
                       </button>
@@ -966,6 +966,14 @@ function ProjectModal({ project, onClose }) {
                             />
                           `
                         )}
+                      </div>
+                    `,
+                    html`
+                      <div
+                        key="modal-count"
+                        className="absolute right-3 top-3 rounded-full bg-black/18 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur sm:right-4 sm:top-4"
+                      >
+                        ${currentIndex + 1} / ${images.length}
                       </div>
                     `
                   ]
@@ -994,8 +1002,11 @@ function ProjectModal({ project, onClose }) {
               ${project.description}
             </p>
             <div className="surface-modal-soft mt-6 rounded-[1.4rem] border p-5">
-              <p className="modal-panel-copy text-sm leading-7">
-                This piece represents part of my growth as a student creator, combining curiosity, collaboration, and a desire to make experiences easier and more enjoyable for people.
+              <p className="modal-panel-label text-xs font-bold uppercase tracking-[0.22em]">
+                Why It Matters
+              </p>
+              <p className="modal-panel-copy mt-3 text-sm leading-7">
+                This project reflects how I think about useful student-centered interfaces: clear visuals, organized information, and features that solve real day-to-day needs without making the experience feel heavy.
               </p>
             </div>
           </div>
