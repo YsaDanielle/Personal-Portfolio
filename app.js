@@ -39,6 +39,8 @@ const projects = [
     category: "Campus guide",
     image: "./guiaazul.png",
     description: "A campus guide built with my groupmates to help Atenean freshies navigate student life more confidently.",
+    whyItMatters:
+      "This project shows how I can design around real student needs and turn campus information into something clearer, friendlier, and easier to use.",
     accent: "from-[#c9b0f1]/60 via-[#f4ebff] to-transparent"
   },
   {
@@ -46,6 +48,8 @@ const projects = [
     category: "Game project",
     image: "./minesweeper.png",
     description: "A group-made Minesweeper project for CIT.005 that focused on logic, teamwork, and playful interaction design.",
+    whyItMatters:
+      "It was the first game project my group and I built together, and it helped me experience how collaboration, logic, and playful design come together in a working interactive project.",
     accent: "from-[#9f86d8]/50 via-[#efe8ff] to-transparent"
   },
   {
@@ -53,6 +57,8 @@ const projects = [
     category: "Frontend exercise",
     image: "./simplecalculator.png",
     description: "A clean working calculator created with HTML and CSS as part of an activity and UI practice.",
+    whyItMatters:
+      "Even as a smaller build, it helped me practice visual clarity, clean structure, and the discipline of making simple tools feel polished.",
     accent: "from-[#dfc7ff]/70 via-[#f7f2ff] to-transparent"
   },
   {
@@ -60,6 +66,8 @@ const projects = [
     category: "Personal website",
     image: "./2ndyearportfolio.png",
     description: "An earlier portfolio piece that helped me explore responsive design and personal branding on the web.",
+    whyItMatters:
+      "This piece marks an important step in how I learned to present myself online and think more intentionally about responsiveness and visual identity.",
     accent: "from-[#bba1f0]/60 via-[#efe7ff] to-transparent"
   },
   {
@@ -67,6 +75,8 @@ const projects = [
     category: "Travel blog",
     image: "./soloescapades.png",
     description: "A travel blog created for a midterm project, designed as though I were documenting journeys as a traveler.",
+    whyItMatters:
+      "It gave me space to explore storytelling through layout, imagery, and mood, not just functionality, which is still a big part of how I design.",
     accent: "from-[#d8c1ff]/70 via-[#f6f0ff] to-transparent"
   },
   {
@@ -75,6 +85,8 @@ const projects = [
     image: "./ffpsystem.png",
     images: ["./ffpsystem.png", "./ffpsystem2.png"],
     description: "A monitoring and management system project designed to organize records, track updates, and support a smoother workflow through a cleaner digital interface.",
+    whyItMatters:
+      "This project highlights how I approach more structured systems work by organizing complex information into a workflow that feels more manageable.",
     accent: "from-[#c4a4ff]/65 via-[#f5eeff] to-transparent"
   },
   {
@@ -91,6 +103,8 @@ const projects = [
     ],
     description:
       "A clean web app where students can add subjects, track deadlines, and mark tasks done. Built like a university-themed Notion-lite, it highlights my React and Tailwind skills through priority tags, a calendar view, and color-coded subjects designed around real student workflows.",
+    whyItMatters:
+      "This project reflects how I think about useful student-centered interfaces: clear visuals, organized information, and features that solve real day-to-day needs without making the experience feel heavy.",
     accent: "from-[#b6cef9]/75 via-[#eef4ff] to-transparent"
   }
 ];
@@ -190,19 +204,33 @@ function App() {
 
 function Navbar({ activeSection, darkMode, onToggleTheme }) {
   return html`
-    <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6">
-      <nav className="surface-glass mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 rounded-[2rem] border px-4 py-3 shadow-soft backdrop-blur-xl sm:px-5">
-        <a href="#top" className="text-primary text-lg font-extrabold tracking-[0.2em]">
-          YSCode
-        </a>
+    <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+      <nav className="surface-glass mx-auto max-w-6xl rounded-[2rem] border px-3 py-3 shadow-soft backdrop-blur-xl sm:px-4 md:flex md:items-center md:justify-between md:gap-4 md:py-2.5">
+        <div className="flex items-center justify-between gap-3 md:flex-none">
+          <a
+            href="#top"
+            className="text-primary font-display text-xl font-semibold tracking-[0.08em] sm:text-2xl md:text-[1.45rem]"
+          >
+            YSCode
+          </a>
 
-        <div className="order-3 flex w-full items-center justify-center gap-1 overflow-x-auto pt-1 sm:order-2 sm:w-auto sm:justify-start sm:pt-0">
+          <button
+            type="button"
+            onClick=${onToggleTheme}
+            aria-label=${darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            className="btn-ghost-theme inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition hover:-translate-y-0.5 sm:h-11 sm:w-11 md:hidden"
+          >
+            ${darkMode ? html`<${SunIcon} />` : html`<${MoonIcon} />`}
+          </button>
+        </div>
+
+        <div className="mt-3 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-center sm:gap-2 md:mt-0 md:flex-1 md:justify-center">
           ${navItems.map(
             (item) => html`
               <a
                 key=${item.href}
                 href=${item.href}
-                className=${`whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                className=${`inline-flex min-h-[2.75rem] items-center justify-center rounded-full px-3 py-2 text-center text-sm font-semibold transition sm:min-h-0 sm:px-4 md:px-4 md:py-2 ${
                   activeSection === item.href.slice(1)
                     ? "bg-plum text-white dark:bg-[#f3eaff] dark:text-[#241733]"
                     : "text-secondary hover:bg-[#f2eaff] dark:text-white/70 dark:hover:bg-white/10"
@@ -218,7 +246,7 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
           type="button"
           onClick=${onToggleTheme}
           aria-label=${darkMode ? "Switch to light mode" : "Switch to dark mode"}
-          className="btn-ghost-theme order-2 inline-flex h-11 w-11 items-center justify-center rounded-full border text-sm font-semibold transition hover:-translate-y-0.5 sm:order-3"
+          className="btn-ghost-theme hidden md:inline-flex md:h-11 md:w-11 md:flex-none md:items-center md:justify-center rounded-full border text-sm font-semibold transition hover:-translate-y-0.5"
         >
           ${darkMode ? html`<${SunIcon} />` : html`<${MoonIcon} />`}
         </button>
@@ -1006,7 +1034,8 @@ function ProjectModal({ project, onClose }) {
                 Why It Matters
               </p>
               <p className="modal-panel-copy mt-3 text-sm leading-7">
-                This project reflects how I think about useful student-centered interfaces: clear visuals, organized information, and features that solve real day-to-day needs without making the experience feel heavy.
+                ${project.whyItMatters ||
+                "This project reflects part of my growth as a student creator and how I think about making digital experiences more useful and intentional."}
               </p>
             </div>
           </div>
