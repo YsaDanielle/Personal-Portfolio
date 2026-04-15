@@ -76,6 +76,22 @@ const projects = [
     images: ["./ffpsystem.png", "./ffpsystem2.png"],
     description: "A monitoring and management system project designed to organize records, track updates, and support a smoother workflow through a cleaner digital interface.",
     accent: "from-[#c4a4ff]/65 via-[#f5eeff] to-transparent"
+  },
+  {
+    title: "AdZU TaskHub",
+    category: "Student productivity web app",
+    image: "./AdZUTaskHub1.png",
+    images: [
+      "./AdZUTaskHub1.png",
+      "./AdZUTaskHub2.png",
+      "./AdZUTaskHub3.png",
+      "./AdZUTaskHub4.png",
+      "./AdZUTaskHub5.png",
+      "./AdZUTaskHub6.png"
+    ],
+    description:
+      "A clean web app where students can add subjects, track deadlines, and mark tasks done. Built like a university-themed Notion-lite, it highlights my React and Tailwind skills through priority tags, a calendar view, and color-coded subjects designed around real student workflows.",
+    accent: "from-[#b6cef9]/75 via-[#eef4ff] to-transparent"
   }
 ];
 
