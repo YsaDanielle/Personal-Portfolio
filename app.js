@@ -420,7 +420,7 @@ function Hero() {
               Contact Me
             </a>
             <a
-              href="./cv.pdf"
+              href="./Ysabel_Danielle_Atienza_CV.pdf"
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-3 border-b border-current pb-1 text-base font-bold text-primary transition hover:opacity-80 dark:text-white"
