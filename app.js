@@ -13,11 +13,11 @@ const navItems = [
 const skillGroups = [
   {
     title: "Core",
-    items: ["HTML", "CSS", "JavaScript", "C++", "React", "MySQL"]
+    items: ["HTML", "CSS", "JavaScript", "C++", "React", "Tailwind CSS", "Bootstrap", "MySQL"]
   },
   {
     title: "Growing In",
-    items: ["Python", "Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Node.js"]
+    items: ["Python", "Next.js", "Sass", "Node.js"]
   },
   {
     title: "Creative Strengths",
@@ -150,7 +150,7 @@ function App() {
         <${ContactSection} />
       </main>
 
-      <footer className="text-muted px-6 pb-10 pt-4 text-center text-sm">
+      <footer className="text-muted px-4 pb-10 pt-4 text-center text-sm sm:px-6 lg:px-8">
         Designed & Built with React and Tailwind. © ${yearLabel} Ysa Danielle Atienza. All rights reserved.
       </footer>
 
@@ -389,17 +389,17 @@ function SocialIcon({ label }) {
 
 function Hero() {
   return html`
-    <section id="top" className="px-6 pb-10 pt-10 sm:px-8 sm:pt-14">
+    <section id="top" className="px-4 pb-10 pt-10 sm:px-6 sm:pt-14 lg:px-8">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div className="animate-fadeUp">
-          <div className="surface-glass text-primary mb-5 inline-flex rounded-full border px-4 py-2 text-sm font-semibold shadow-sm backdrop-blur dark:text-[#eadcff]">
+          <div className="surface-glass text-primary mb-5 inline-flex max-w-full rounded-full border px-4 py-2 text-center text-sm font-semibold shadow-sm backdrop-blur dark:text-[#eadcff]">
             BSCS Student • Front-End Developer • Creative Thinker
           </div>
 
           <p className="text-muted mb-4 text-sm font-bold uppercase tracking-[0.28em] dark:text-white/55">
             Hello, I’m Ysa Danielle Atienza
           </p>
-          <h1 className="text-primary max-w-3xl font-display text-5xl leading-none sm:text-6xl lg:text-7xl dark:text-[#f7f1ff]">
+          <h1 className="text-primary max-w-3xl font-display text-4xl leading-none sm:text-6xl lg:text-7xl dark:text-[#f7f1ff]">
             I build thoughtful, inviting digital experiences with equal care for code and design.
           </h1>
           <p className="text-secondary mt-6 max-w-2xl text-base leading-8 sm:text-lg dark:text-white/70">
@@ -445,7 +445,7 @@ function Hero() {
             <img
               src="./portfoliopic.png"
               alt="Ysa Danielle Atienza portrait"
-              className="fade-mask h-[28rem] w-full rounded-[1.5rem] object-cover object-center"
+              className="fade-mask h-[22rem] w-full rounded-[1.5rem] object-cover object-center sm:h-[28rem]"
             />
             <div className="surface-feature-panel mt-4 rounded-[1.5rem] p-4">
               <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">
@@ -473,9 +473,9 @@ function StatCard({ value, label }) {
 
 function AboutSection() {
   return html`
-    <section id="about" className="px-6 py-12 sm:px-8">
+    <section id="about" className="px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="surface-feature-panel rounded-[2rem] px-8 py-10 shadow-card">
+        <div className="surface-feature-panel rounded-[2rem] px-6 py-8 shadow-card sm:px-8 sm:py-10">
           <p className="feature-panel-label text-sm font-bold uppercase tracking-[0.3em]">About me</p>
           <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl">
             I enjoy making things that feel useful, gentle, and well put together.
@@ -486,7 +486,7 @@ function AboutSection() {
         </div>
 
         <div className="grid gap-6">
-          <div className="surface-card rounded-[2rem] border p-7 shadow-card backdrop-blur">
+          <div className="surface-card rounded-[2rem] border p-5 shadow-card backdrop-blur sm:p-7">
             <p className="text-muted text-sm font-bold uppercase tracking-[0.28em] dark:text-white/45">Skills</p>
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               ${skillGroups.map(
@@ -513,7 +513,7 @@ function AboutSection() {
             </div>
           </div>
 
-          <div className="surface-card rounded-[2rem] border p-7 shadow-card backdrop-blur">
+          <div className="surface-card rounded-[2rem] border p-5 shadow-card backdrop-blur sm:p-7">
             <p className="text-muted text-sm font-bold uppercase tracking-[0.28em] dark:text-white/45">Outside the screen</p>
             <div className="mt-5 flex flex-wrap gap-3">
               ${hobbies.map(
@@ -536,7 +536,7 @@ function AboutSection() {
 
 function ProjectsSection({ onSelectProject }) {
   return html`
-    <section id="projects" className="px-6 py-12 sm:px-8">
+    <section id="projects" className="px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -713,8 +713,8 @@ function ContactSection() {
   };
 
   return html`
-    <section id="contact" className="px-6 py-12 sm:px-8">
-      <div className="surface-contact-panel mx-auto grid max-w-6xl gap-6 rounded-[2.4rem] px-6 py-6 shadow-soft lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-8">
+    <section id="contact" className="px-4 py-12 sm:px-6 lg:px-8">
+      <div className="surface-contact-panel mx-auto grid max-w-6xl gap-6 rounded-[2.4rem] px-4 py-5 shadow-soft sm:px-6 sm:py-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-8">
         <div>
           <p className="feature-panel-label text-sm font-bold uppercase tracking-[0.28em]">Contact</p>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl">
@@ -725,14 +725,14 @@ function ContactSection() {
           </p>
 
           <div className="mt-8 grid gap-4">
-            <div className="surface-contact-card flex items-center justify-between gap-4 rounded-[1.6rem] border p-5">
-              <div className="flex min-w-0 items-center gap-4">
+            <div className="surface-contact-card flex flex-col items-start gap-4 rounded-[1.6rem] border p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex min-w-0 w-full items-center gap-4 sm:w-auto">
                 <div className="social-orb inline-flex h-11 w-11 items-center justify-center rounded-full border">
                   <${MailIcon} />
                 </div>
                 <div className="min-w-0">
                   <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">Email</p>
-                  <a className="mt-1 block truncate text-lg font-semibold hover:text-[#f1dfff]" href="mailto:ysadani.atienza@gmail.com">
+                  <a className="mt-1 block break-all text-base font-semibold hover:text-[#f1dfff] sm:text-lg sm:break-normal sm:truncate" href="mailto:ysadani.atienza@gmail.com">
                     ysadani.atienza@gmail.com
                   </a>
                 </div>
@@ -740,21 +740,21 @@ function ContactSection() {
               <button
                 type="button"
                 onClick=${() => copyText("ysadani.atienza@gmail.com")}
-                className="contact-copy inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]"
+                className="contact-copy inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] sm:w-auto sm:shrink-0"
               >
                 <${CopyIcon} />
                 <span>Copy</span>
               </button>
             </div>
 
-            <div className="surface-contact-card flex items-center justify-between gap-4 rounded-[1.6rem] border p-5">
-              <div className="flex min-w-0 items-center gap-4">
+            <div className="surface-contact-card flex flex-col items-start gap-4 rounded-[1.6rem] border p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex min-w-0 w-full items-center gap-4 sm:w-auto">
                 <div className="social-orb inline-flex h-11 w-11 items-center justify-center rounded-full border">
                   <${PhoneIcon} />
                 </div>
                 <div className="min-w-0">
                   <p className="feature-panel-label text-xs font-bold uppercase tracking-[0.25em]">Phone</p>
-                  <a className="mt-1 block truncate text-lg font-semibold hover:text-[#f1dfff]" href="tel:+639771050524">
+                  <a className="mt-1 block text-base font-semibold hover:text-[#f1dfff] sm:text-lg" href="tel:+639771050524">
                     +63 977 105 0524
                   </a>
                 </div>
@@ -762,7 +762,7 @@ function ContactSection() {
               <button
                 type="button"
                 onClick=${() => copyText("+63 977 105 0524")}
-                className="contact-copy inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]"
+                className="contact-copy inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] sm:w-auto sm:shrink-0"
               >
                 <${CopyIcon} />
                 <span>Copy</span>
@@ -802,7 +802,7 @@ function ContactSection() {
           </div>
         </div>
 
-        <div className="surface-contact-form rounded-[2rem] border p-6">
+        <div className="surface-contact-form rounded-[2rem] border p-5 sm:p-6">
           <p className="feature-panel-label text-sm font-bold uppercase tracking-[0.28em]">Quick Message</p>
           <h3 className="mt-3 font-display text-3xl sm:text-4xl">Draft a clean intro email</h3>
 
@@ -841,11 +841,11 @@ function ContactSection() {
             </label>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <button
               type="button"
               onClick=${draftEmail}
-              className="btn-primary-theme inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-bold transition hover:-translate-y-1"
+              className="btn-primary-theme inline-flex w-full items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-bold transition hover:-translate-y-1 sm:w-auto"
             >
               <span>Draft Email Message</span>
               <span>→</span>
@@ -853,7 +853,7 @@ function ContactSection() {
             <button
               type="button"
               onClick=${resetForm}
-              className="btn-ghost-theme rounded-full border px-6 py-3 text-sm font-bold transition hover:-translate-y-1"
+              className="btn-ghost-theme w-full rounded-full border px-6 py-3 text-sm font-bold transition hover:-translate-y-1 sm:w-auto"
             >
               Clear Form
             </button>
@@ -888,12 +888,12 @@ function ProjectModal({ project, onClose }) {
 
   return html`
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/55 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/55 p-3 backdrop-blur-sm sm:items-center sm:p-4"
       onClick=${onClose}
       role="presentation"
     >
       <div
-        className="surface-card w-full max-w-4xl overflow-hidden rounded-[2rem] border shadow-soft dark:bg-[#1d132a]"
+        className="surface-card my-6 w-full max-w-4xl overflow-hidden rounded-[2rem] border shadow-soft dark:bg-[#1d132a] sm:my-8"
         onClick=${(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -905,7 +905,7 @@ function ProjectModal({ project, onClose }) {
               <img
                 src=${images[currentIndex]}
                 alt=${`${project.title} preview ${currentIndex + 1}`}
-                className="h-full max-h-[28rem] w-full rounded-[1.5rem] object-cover"
+                className="h-full max-h-[18rem] w-full rounded-[1.5rem] object-cover sm:max-h-[22rem] lg:max-h-[28rem]"
               />
 
               ${images.length > 1
@@ -956,20 +956,20 @@ function ProjectModal({ project, onClose }) {
                 : null}
             </div>
           </div>
-          <div className="surface-modal-panel flex flex-col p-6 sm:p-8">
-            <div className="flex items-start justify-between gap-4">
+          <div className="surface-modal-panel flex flex-col p-5 sm:p-8">
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
               <div>
                 <p className="modal-panel-label text-xs font-bold uppercase tracking-[0.25em]">
                   ${project.category}
                 </p>
-                <h3 className="modal-panel-heading mt-3 font-display text-4xl">
+                <h3 className="modal-panel-heading mt-3 font-display text-3xl sm:text-4xl">
                   ${project.title}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick=${onClose}
-                className="modal-panel-close rounded-full border px-3 py-2 text-sm font-bold"
+                className="modal-panel-close w-full rounded-full border px-3 py-2 text-sm font-bold sm:w-auto"
               >
                 Close
               </button>
