@@ -447,7 +447,7 @@ function Hero() {
             I build thoughtful, inviting digital experiences with equal care for code and design.
           </h1>
           <p className="text-secondary mt-6 max-w-2xl text-base leading-8 sm:text-lg dark:text-white/70">
-            This refreshed portfolio highlights the projects, creativity, and curiosity that shape how I learn and create as a third-year Computer Science student.
+            This refreshed portfolio highlights the projects, creativity, and curiosity that shape how I learn and create as a fourth-year Computer Science student.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -525,7 +525,7 @@ function AboutSection() {
             I enjoy making things that feel useful, gentle, and well put together.
           </h2>
           <p className="feature-panel-copy mt-6 text-base leading-8">
-            I’m a 21-year-old third-year Bachelor of Science in Computer Science student who enjoys coding, design, and creating experiences that feel warm and intentional. I love learning new tools, exploring better ways to build interfaces, and collaborating with people who care about thoughtful work.
+            I’m a 22-year-old fourth-year Bachelor of Science in Computer Science student who enjoys coding, design, and creating experiences that feel warm and intentional. I love learning new tools, exploring better ways to build interfaces, and collaborating with people who care about thoughtful work.
           </p>
         </div>
 
