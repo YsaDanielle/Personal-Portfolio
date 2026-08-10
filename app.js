@@ -525,7 +525,7 @@ function AboutSection() {
             I enjoy making things that feel useful, gentle, and well put together.
           </h2>
           <p className="feature-panel-copy mt-6 text-base leading-8">
-            I’m a 22-year-old fourth-year Bachelor of Science in Computer Science student who enjoys coding, design, and creating experiences that feel warm and intentional. I love learning new tools, exploring better ways to build interfaces, and collaborating with people who care about thoughtful work.
+            I’m a 21-year-old fourth-year Bachelor of Science in Computer Science student who enjoys coding, design, and creating experiences that feel warm and intentional. I love learning new tools, exploring better ways to build interfaces, and collaborating with people who care about thoughtful work.
           </p>
         </div>
 
